@@ -1,8 +1,8 @@
 'use strict';
 
 require('dotenv').config();
-const server = require('./src/server.js');
-const { db } = require('./src/models/index.js');
+const server = require('./Banana/src/server');
+const { db } = require('./Banana/src/db');
 
 db.sync()
   .then(() => {

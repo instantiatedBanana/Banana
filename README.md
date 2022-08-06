@@ -15,7 +15,23 @@ Your application must employ the following programming concepts:
 # Pull Request
 - 
 
+# GitHub Action
+- 
+
 # Starting Up
 - Ensure .env file is set up
   - Example PORT=(enter port number here).
-  
+- In terminal run npm i to install dependencies.
+  - run: 
+    - jsonwebtoken
+    - sqlite3
+    - sequlize
+    - bcrypt
+- Local testing in Thunderclient, Postman, or Insomnia.
+
+# UML
+- ![Whiteboard](/lab9whiteboard.png)
+
+# Notes
+- 
+
