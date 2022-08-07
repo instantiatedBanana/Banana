@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const  { userSchema } = require('./users/models.js');
-
+const  { user } = require('./models/users/models.js');
+const { note } = require ('./models/notes/models.js')
 
 let connection_string;
 
@@ -29,5 +29,6 @@ const db = new Sequelize(connection_string, {
 
 module.exports = {
   db,
-  userSchema(db)
+  Users: user(db),
+  Notes: note(db),
 }

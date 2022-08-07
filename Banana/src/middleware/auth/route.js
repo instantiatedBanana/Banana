@@ -1,4 +1,4 @@
-const { Users } = require('../../models/index');
+const { Users } = require('../../db');
 const express = require('express');
 const bcrypt = require('bcrypt');
 
@@ -7,7 +7,7 @@ const router = express.Router();
 async function signupUser(req, res) {
     try {
         let obj = req.body;
-        const findName = await Users.model.findOne({
+        const findName = await Users.findOne({
             where: { username: req.body.username }
         });
         if (findName === null) {
@@ -23,7 +23,7 @@ async function signupUser(req, res) {
 
 async function signinUser(req, res) {
     try {
-        const user = await Users.model.findOne({
+        const user = await Users.findOne({
             where: { username: req.body.username },
         });
         // console.log('HEEEEEEYYYYYYYYY', user);

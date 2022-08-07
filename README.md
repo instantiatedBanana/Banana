@@ -33,5 +33,6 @@ Your application must employ the following programming concepts:
 - ![Whiteboard](/lab9whiteboard.png)
 
 # Notes
+- Got the Server up and running, created CRUD functionality for our notes model.
 - 
 
