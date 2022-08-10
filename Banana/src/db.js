@@ -28,7 +28,7 @@ const db = new Sequelize(connection_string, {
 
 
 module.exports = {
-  db,
+  db: db,
   Users: user(db),
   Notes: note(db),
 }

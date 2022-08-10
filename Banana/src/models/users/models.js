@@ -1,7 +1,6 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
-const SECRET = process.env.SECRET;
 const jwt = require('jsonwebtoken');
 const { DataTypes } = require('sequelize');
 
@@ -21,11 +20,14 @@ const user = (sequelize) => {
     token: {
       type: [DataTypes.VIRTUAL],
       get() {
-
         const payload = { username: this.username, role: this.role };
-        return jwt.sign(payload, SECRET);
+        return jwt.sign(payload, process.env.SECRET);
       },
     },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   });
 
   userModel.beforeCreate(async (user) => {
